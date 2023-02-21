@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS Fifa_database;
 -- -----------------------------------------------
 USE Fifa_database;
 -- -----------------------------------------------
-/* Create a schema based on the following Details
+/* Create a table schema based on the following Details
 Name		Data Type
 ---------------------
 Home		string,
@@ -23,7 +23,9 @@ CREATE TABLE IF NOT EXISTS `match_details` (
   `Type` varchar(255) NOT NULL
 ) ;
 -- ------------------------------------------------
-/* Import the csv file into match_details table using table with table data import wizard */
+/* Import the csv file into match_details table using table with table data import wizard 
+1. Right click on the table name in the left hand side navigator in MySQL workbench
+2. Follow the on-screen prompts and map the field and data types*/
 
 /*How do we read / extract / query the data imported in match_details table?
 
@@ -34,9 +36,11 @@ Limit <restrict the number of rows to extract>;
 
 */
 /* show the top 10 rows of the match_details table */
-select * 
-from match_details 
-limit 10;
+SELECT 
+    *
+FROM
+    match_details
+LIMIT 10;
 -- ------------------------------------------------
 /* Remove Duplicated rows */
 /* First check which rows are duplicated using ID column */
